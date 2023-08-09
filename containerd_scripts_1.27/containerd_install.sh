@@ -85,6 +85,7 @@ After=network.target local-fs.target
 
 [Service]
 ExecStartPre=-/sbin/modprobe overlay
+# 默认读取 /etc/containerd/config.toml 配置文件，可以使用 --config 指定
 ExecStart=/usr/local/bin/containerd
 Type=notify
 Delegate=yes
